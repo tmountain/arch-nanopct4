@@ -5,7 +5,8 @@
 This guide provides a relatively easy method for bootstrapping Arch Linux
 on the NanoPC-T4's integrated eMMC storage.
 
-The NanoPC-T4 is a fun piece of kit sporting an integrated Rockchip RK3399 CPU.
+The [NanoPC-T4](https://wiki.friendlyarm.com/wiki/index.php/NanoPC-T4)
+is a fun piece of kit sporting an integrated Rockchip RK3399 CPU.
 Recent updates to u-boot to officially support the T4 in its mainline branch
 (`nanopc-t4-rk3399_defconfig`) remove a lot of friction regarding a previous
 requirement to build custom `idbloader.bin`, `trust.bin`, `uboot.img` image files
@@ -94,6 +95,8 @@ if load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} /boot/Image; then
 fi
 ```
 
+Note: boot.txt is available [boot/boot.txt](here) for your convenience.
+
 ### Optional: host root filesystem on NVMe storage.
 
 If you want to move the root filesystem to NVMe storage at a later time, you can modify `boot.txt`
@@ -155,6 +158,8 @@ Add the NVMe partition UUID to `boot.txt`.
 /usr/lib/linux-u-boot-current-nanopct4_20.11.6_arm64/uboot.img
 ...
 ```
+
+Note: images are available [images](here) for your convenience.
 
 ### Flash the boot loader to the eMMC.
 ```
